@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",                            /* Use o modo JSX mais moderno */
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node",                    /* Resolve módulos no estilo node */
+    "esModuleInterop": true,                       /* Suporte para importação de módulos CommonJS */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,                          /* Ignora verificação de tipos em arquivos .d.ts */
+    "strict": true,
+    "resolveJsonModule": true
+  }
+}

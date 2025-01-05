@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('./assets/fonts/Cinzel.ttf') format('trueType');
+    font-weight: 200;
+    font-style: normal;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
