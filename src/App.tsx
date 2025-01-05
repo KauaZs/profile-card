@@ -5,7 +5,7 @@ import Social from "./components/Social";
 import config from "./config/config";
 
 function App() {
-  const { displayName, about, avatar_url, banner } = config.profileOptions
+  const { displayName, about, avatar_url, banner } = config.profileOptions;
   return ( 
     
     <div className="flex items-center justify-center h-screen bg-gray-900 relative">
