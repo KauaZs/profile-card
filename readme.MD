@@ -1,7 +1,3 @@
-Here is the README for your React profile card project in English:
-
----
-
 # Profile Card React
 
 This is a simple profile card project using React. Below are the instructions on how to set up and run the project.
