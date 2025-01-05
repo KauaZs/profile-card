@@ -1,6 +1,5 @@
-import React from "react";
 import Starfield from "./components/Space";
-import { FaDiscord, FaGithub } from "react-icons/fa";
+
 import Social from "./components/Social";
 import config from "./config/config";
 
