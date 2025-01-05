@@ -5,7 +5,7 @@ import Social from "./components/Social";
 import config from "./config/config";
 
 function App() {
-  const { displayName, about, avatar_url, banner } = config.profileOptions;
+  const { displayName, about, avatar_url, banner } = config.profileOptions
   return ( 
     
     <div className="flex items-center justify-center h-screen bg-gray-900 relative">
@@ -29,7 +29,7 @@ function App() {
           <h1 className="font-semibold text-white right-20 text-3xl">{displayName || "Random"}</h1>
           <p className="font-Cinzel text-white right-20 mt-1 text-center text-xs">{about || ""}</p>   
         </div>
-        <div className="mt-9">
+        <div className="flex flex-grow gap-6 mt-6">
           <Social />    
         </div>    
       </div>

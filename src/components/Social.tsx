@@ -6,7 +6,7 @@ const Social = () => {
   const { github: githubLink, discord: discordLink } = config.profileLinks || {};
   
   return (
-    <div className="flex flex-grow gap-5">
+    <>
       {discordLink && (
         <button
           className="bg-slate-500 px-6 py-2 rounded text-white hover:bg-slate-400 flex items-center gap-2"
@@ -31,7 +31,7 @@ const Social = () => {
           Github
         </button>
       )} 
-    </div>
+    </>
   );
 };
 
