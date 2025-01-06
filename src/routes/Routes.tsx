@@ -3,6 +3,7 @@ import { Fragment } from "react/jsx-runtime"
 
 import React from "react"
 import Card from "../pages/Card"
+import Editor from "../pages/Editor"
 
 const AppRoutes = () => {
     return (

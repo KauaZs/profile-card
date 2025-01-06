@@ -1,3 +1,5 @@
+import { Button } from '../components/ui/button';
+import { DialogEdit } from '../components/Dialog';
 import Social from '../components/Social';
 import Starfield from '../components/Space';
 import config from '../config/config';
@@ -8,9 +10,15 @@ const Card = () => {
     const { displayName, about, avatar_url, banner } = config.profileOptions;
     const { logged } = useAuth()
     return ( 
-      
+        
       <div className="flex items-center justify-center h-screen bg-gray-900 relative">
         <Starfield  backgroundColor="#000000" />
+
+        <div className="absolute top-0 right-0 mt-4 mr-3">
+          <DialogEdit />
+          <Button variant={'destructive'} className='ml-3'>Logout</Button>
+        </div>
+        
         <div className="relative w-80 h-80 bg-gray-800 rounded-lg shadow-lg p-6">
           <div className="absolute -top-20 left-0 w-full">
             <img
