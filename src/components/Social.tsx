@@ -1,4 +1,3 @@
-import React from 'react';
 import config from '../config/config';
 import { FaDiscord, FaGithub } from 'react-icons/fa';
 

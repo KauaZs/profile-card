@@ -1,13 +1,29 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",                            /* Use o modo JSX mais moderno */
-    "target": "es2016",
-    "module": "commonjs",
-    "moduleResolution": "node",                    /* Resolve módulos no estilo node */
-    "esModuleInterop": true,                       /* Suporte para importação de módulos CommonJS */
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,                          /* Ignora verificação de tipos em arquivos .d.ts */
+    "noEmit": true,
+    "isolatedModules": true,
     "strict": true,
-    "resolveJsonModule": true
-  }
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "allowImportingTsExtensions": true    // Adicione esta linha
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
