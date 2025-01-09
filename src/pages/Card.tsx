@@ -59,7 +59,7 @@ const Card = () => {
           if (data)return;
             const fetchData = async () => {
               try { 
-                const result = await axios.get(`/api/users/${user}`, {
+                const result = await axios.get(`/users/${user}`, {
                   headers: {
                     Authorization: import.meta.env.API_KEY,
                     'Content-Type': 'application/json'
@@ -115,7 +115,7 @@ const Card = () => {
           </div>
         ) : (
           <div className="absolute top-0 right-0 mt-4 mr-3 flex items-center">
-              <Button  onClick={() => window.location.pathname = '/api/auth'}>
+              <Button  onClick={() => window.location.pathname = '/auth'}>
                   Login
               </Button>
           </div>

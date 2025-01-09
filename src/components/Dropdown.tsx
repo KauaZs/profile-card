@@ -28,7 +28,7 @@ export function DropdownMenuAccount({ isHisProfile} : {isHisProfile: boolean}) {
   };
 
   const handleLogout = async () => {
-      const result = await axios.post('/api/auth/logout')
+      const result = await axios.post('/auth/logout')
       window.location.reload()
   }
 

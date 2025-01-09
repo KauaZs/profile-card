@@ -19,7 +19,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     const [user, setUser] = useState();
     useEffect(() => {
         const fetchUser = async () => {
-            const user = await axios.get('/api/@me')
+            const user = await axios.get('/@me')
 
             setUser(user?.data);
             return user?.data;
