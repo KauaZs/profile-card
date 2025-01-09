@@ -2,15 +2,20 @@ import useAuth from "../hooks/useAuh";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
-  const { user, logged } = useAuth()
+  const { user, logged, loggedProcess } = useAuth()
   const [loading, setLoading] = useState<boolean>(true);
+ 
   useEffect(() => {
-    if (logged == undefined) setLoading(true);
-    else if (logged == false) setLoading(false)
-  }, [loading])
+    if (!loggedProcess) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [logged, loggedProcess]);
+ 
   return (
     
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800 flex flex-col items-center">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800 flex flex-col items-center overflow-hidden">
     <header className="w-full text-center py-16 px-4 bg-white shadow-lg">
       <h1 className="text-5xl font-extrabold text-blue-600 mb-4">
         Welcome to Kaurds
@@ -21,20 +26,20 @@ const Home = () => {
       </p>
       <button
         className={`mt-6 px-8 py-3 ${
-          loading
+          !loggedProcess
             ? 'bg-gray-300 text-gray-500 animate-pulse'
             : 'bg-blue-600 text-white'
         } text-lg font-semibold rounded-lg shadow ${
-          loading ? '' : 'hover:bg-blue-700'
+          !loggedProcess ? '' : 'hover:bg-blue-700'
         }`}
         onClick={() =>
           window.location.pathname = logged
             ? `/u/${user.database.profileOptions.displayName}`
             : '/api/auth'
         }
-        disabled={(user === undefined) && logged}
+        disabled={loading || logged == false}
       >
-        {loading ? 'Loading...' : (logged ? 'View my profile' : 'Login')}
+        {!loggedProcess ? 'Loading...' : (user ? 'View my profile' : 'Login')}
       </button>
     </header>
 
@@ -92,7 +97,7 @@ const Home = () => {
           }`}  
           disabled={loading} 
           onClick={() => window.location.pathname = logged? `/u/${user.database.profileOptions.displayName}` :'/api/auth'}>
-          {loading ? 'Loading...' : (logged == false ? 'Login' : 'View my profile')}
+          {loading ? 'Loading...' : (!user ? 'Login' : 'View my profile')}
         </button>
       </footer>
     </div>
