@@ -43,7 +43,7 @@ const darkenHex = (hex: string, amount: number): string => {
 
 const Card = () => {
     const { displayName, about, avatar_url, banner } = config.profileOptions;
-    const { logged, user: userLogged } = useAuth()
+    const { logged, user: userLogged, loggedProcess } = useAuth()
     const [data, setData] = useState<IUserData>();
     const [error, setError] = useState<string>();
     const { user } = useParams();
@@ -116,7 +116,13 @@ const Card = () => {
         </Helmet>
         {data?.profileOptions.effectSpace && <Starfield  backgroundColor="#000000" />}
 
-        {logged ? (
+        {!loggedProcess? (
+          <div className="absolute top-0 right-0 mt-4 mr-3 flex items-center">
+            <Button  onClick={() => window.location.pathname = '/api/auth'} disabled={true}>
+              Loading...
+            </Button>
+          </div>
+        )   :  isHisLogged ? (
           <div className="absolute top-0 right-0 mt-4 mr-3 flex items-center">
             <DropdownMenuAccount  isHisProfile={isHisLogged}/>
           </div>
