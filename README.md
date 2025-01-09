@@ -1,11 +1,8 @@
-# Profile Card React
+# Profile Card (Kaurds)
 
-This is a simple profile card project using React. Below are the instructions on how to set up and run the project.
+This is a simple profile card project using React and Tailwindcss. Below are the instructions on how to set up and run the project.
 
-## Requirements
-
-- Node.js (latest version recommended)
-- npm (package manager)
+<img style="border-radius:14px" src="https://cloud-6y9ugxmed-hack-club-bot.vercel.app/0captura_de_tela_2025-01-09_144714.png" />
 
 ## How to Set Up
 
@@ -24,33 +21,15 @@ This is a simple profile card project using React. Below are the instructions on
    npm install
    ```
 
-4. To set up the name, avatar, and banner for the profile, edit the `src/config/config.ts` file with your desired values.
-
-   Example configuration in `src/config/config.ts`:
-   ```ts
-   export default = {
-      profileOptions: {
-        displayName: "YourName",  // Replace with your profile name
-        avatar_url: "https://i.imgur.com/UiYbFjI.png",  // Replace with your avatar URL
-        about: "About",  // Replace with your bio or about text
-        banner: "https://i.imgur.com/24eSA7k.gif"  // Replace with your banner URL
-    },
-    profileLinks: {
-        discord: "https://discord.com/users/573812452165156864",  // Replace with your Discord profile link
-        github: "https://github.com/KauaZs"  // Replace with your GitHub profile link
-    }
-   };
-   ```
 
 ## How to Run the Project
 
-After configuring the data in the `config.ts` file, run the following command to start the development server:
-
+> **REQUIRED**: The API must be online: [Repository](https://github.com/KauaZs/profile-api)
 ```bash
-npm run start
+npm run dev
 ```
 
-The application will start at `http://localhost:3000` in your browser.
+The application will start at `http://localhost:5173` in your browser.
 
 
 ## License
