@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/api/(.*)",
-            "destination": "https://api.kauazs.hackclub.app/$1"
+            "destination": "https://api.kauazs.hackclub.app/api/$1"
         },
         {
             "source": "/(.*)",
