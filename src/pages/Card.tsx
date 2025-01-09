@@ -108,9 +108,11 @@ const Card = () => {
         <Helmet>
             <title>Profile {data?.profileOptions.displayName} - Kaurds</title>
             <meta name="description" content={`see ${data?.profileOptions.displayName} profile and find out more about him`} />
+            <meta property="og:type" content="website" />
             <meta property="og:title" content={`${data?.profileOptions.displayName}`} />
             <meta property="og:description" content={`see ${data?.profileOptions.displayName} profile and find out more about him`} />
             <meta property="og:url" content={`https://kaurds.kauazs.tech/u/${data?.profileOptions.displayName}`} />
+            <meta name="theme-color" content="#819bf0" />
         </Helmet>
         {data?.profileOptions.effectSpace && <Starfield  backgroundColor="#000000" />}
 
