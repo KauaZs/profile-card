@@ -19,12 +19,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     const [user, setUser] = useState();
     useEffect(() => {
         const fetchUser = async () => {
-            const user = await axios.get('/api/auth/user')
+            const user = await axios.get('/api/@me')
 
             setUser(user?.data);
             return user?.data;
         }  
-        console.log(Cookies.get('user_discord'))
         if (Cookies.get('user_discord'))  {
             fetchUser()
         }
