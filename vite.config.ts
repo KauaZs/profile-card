@@ -12,10 +12,10 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": {
+     /*  "/api": {
         target: process.env.API_URL,
         changeOrigin: true,
-      },
+      }, */
     },
   },
 })
