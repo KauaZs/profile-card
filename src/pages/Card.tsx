@@ -1,17 +1,15 @@
 import { Button } from '../components/ui/button';
-import { DialogEdit } from '../components/Dialog';
 import Social from '../components/Social';
 import Starfield from '../components/Space';
 import config from '../config/config';
 import useAuth from '../hooks/useAuh';
 import React, { useEffect, useState } from 'react'
-import useQuery from '../hooks/useQuery';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import PageNotFound from './Error/PageNotFound';
 import { DropdownMenuAccount } from '../components/Dropdown';
-import { error } from 'console';
 
+import { Helmet } from 'react-helmet';
 
 
 interface IUserData {
@@ -106,6 +104,14 @@ const Card = () => {
       <div className="flex items-center justify-center h-screen relative" style={
         {backgroundColor: data.profileOptions?.colorBackground || '#111827'}
       }>
+
+        <Helmet>
+            <title>Profile {data?.profileOptions.displayName} - Kaurds</title>
+            <meta name="description" content={`see ${data?.profileOptions.displayName} profile and find out more about him`} />
+            <meta property="og:title" content={`${data?.profileOptions.displayName}`} />
+            <meta property="og:description" content={`see ${data?.profileOptions.displayName} profile and find out more about him`} />
+            <meta property="og:url" content={`https://kaurds.kauazs.tech/u/${data?.profileOptions.displayName}`} />
+        </Helmet>
         {data?.profileOptions.effectSpace && <Starfield  backgroundColor="#000000" />}
 
         {logged ? (
@@ -122,7 +128,7 @@ const Card = () => {
         
         }
         
-        <div className="relative w-80 h-80 bg-gray-800 rounded-lg shadow-lg p-6" style={
+        <div className="relative w-80 h-80  bg-gray-800 rounded-lg shadow-lg p-6" style={
           {
             backgroundColor: data?.profileOptions.colorCard || '#1f2937'
           }
