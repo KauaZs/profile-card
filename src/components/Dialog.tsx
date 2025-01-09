@@ -51,7 +51,7 @@ export function DialogEdit() {
     try {
       const result = await axios({
         method: 'post',
-        url: `/profile/?userId=${user.discord.id}`,
+        url: `/api/profile/?userId=${user.discord.id}`,
         headers: {
           Authorization: import.meta.env.API_KEY,
           'Content-Type': 'application/json'

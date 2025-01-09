@@ -25,7 +25,7 @@ const Home = () => {
         onClick={() =>
           window.location.pathname = logged
             ? `/u/${user.database.profileOptions.displayName}`
-            : '/auth'
+            : '/api/auth'
         }
         disabled={!!logged}
       >
@@ -86,7 +86,7 @@ const Home = () => {
             : "animate-pulse text-gray-50"
           }`}  
           disabled={!logged} 
-          onClick={() => window.location.pathname = logged? `/u/${user.database.profileOptions.displayName}` :'/auth'}>
+          onClick={() => window.location.pathname = logged? `/u/${user.database.profileOptions.displayName}` :'/api/auth'}>
           {logged ? 'View my profile' : 'Loading...'}
         </button>
       </footer>
