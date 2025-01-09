@@ -21,6 +21,11 @@ This is a simple profile card project using React and Tailwindcss. Below are the
    npm install
    ```
 
+4. Create your .env file:
+   ```bash
+   API_KEY=YourApiKey #  Visit https://github.com/KauaZs/profile-api
+   API_URL=YourApiUrl # Example https://localhost:3001
+   ```
 
 ## How to Run the Project
 
