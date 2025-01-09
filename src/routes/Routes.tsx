@@ -3,15 +3,15 @@ import { Fragment } from "react/jsx-runtime"
 
 import React from "react"
 import Card from "../pages/Card"
-import Editor from "../pages/Editor"
-
+import Home from '../pages/Home'
 const AppRoutes = () => {
     return (
         <BrowserRouter>
             <Fragment>
                 <RouterRoutes>
-                 <Route path='/u' element={<Card />} />
-                 <Route path='*' element={<Card />} /> 
+                 <Route path='/u/:user' element={<Card />} />
+                 <Route path='*' element={<Home />} /> 
+                 <Route path='/home' element={<Home />} /> 
                 </RouterRoutes>
             </Fragment>
         </BrowserRouter>
