@@ -38,15 +38,19 @@ export function DialogEdit() {
 
     const regexUrl = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$/;
     const regexHex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-    const regexGithub = /^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_-]+$/
-    
+    const regexGithub = /^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_-]+$/;
+    const regexNick = /^[a-zA-Z0-9]+$/;
+    const regexDiscord = /^https:\/\/discord\.com\/users\/\d+$/
+
     if (!formData.displayName) return setError('the name field is required')
     if (formData.displayName.length > 30) return setError('your nickname must be less than 30 characters')
+    if (!regexNick.test(formData.displayName)) return setError('Do not use inappropriate characters in your nickname')
     if (formData.avatar && !regexUrl.test(formData.avatar)) return setError('the avatar field needs to be a url')
     if (formData.banner && !regexUrl.test(formData.banner)) return setError('the banner field needs to be a url')
     if (formData.colorBackground && !regexHex.test(formData.colorBackground)) return setError('the background color field needs to be a hexcolor')
     if (formData.colorCard && !regexHex.test(formData.colorCard)) return setError('the background card color field needs to be a hexcolor')
     if (formData.socials.github && !regexGithub.test(formData.socials.github)) return setError('github link is invalid')
+    if (formData.socials.discord && !regexDiscord.test(formData.socials.discord)) return setError('discord link is invalid')
     
     try {
       const result = await axios({
