@@ -24,18 +24,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         const fetchUser = async () => {
             const user = await axios.get('/api/@me',{
                 withCredentials: true
-        })
+            })
             
-            setTimeout(() => {
-                setUser(user?.data);
-                setLoggedProcess(true)
-                return user?.data;
-            }, 2000)
+            setUser(user?.data);
+            setLoggedProcess(true)
+            return user?.data;   
             
         }  
         if (Cookies.get('user_discord'))  {
             fetchUser()
-           
         } else {
             setLoggedProcess(true)
         }
