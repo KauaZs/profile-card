@@ -37,7 +37,7 @@ const Home = () => {
             ? `/u/${user.database.profileOptions.displayName}`
             : '/api/auth'
         }
-        disabled={loading || logged == false}
+        disabled={loading}
       >
         {!loggedProcess ? 'Loading...' : (user ? 'View my profile' : 'Login')}
       </button>
