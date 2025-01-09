@@ -5,13 +5,17 @@ import dotenv from 'dotenv';
 dotenv.config()
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/',
+  plugins: [react()],
+  define: {
+    'import.meta.env.API_KEY': JSON.stringify(process.env.API_KEY),
+    'import.meta.env.API_URL': JSON.stringify(process.env.API_URL)
+  },
   server: {
-    proxy: process.env.NODE_ENV === 'development' ? {
-      "/api": {
+    proxy: {
+     /*  "/api": {
         target: process.env.API_URL,
         changeOrigin: true,
-      },
-    } : {}
-  }
+      }, */
+    },
+  },
 })
