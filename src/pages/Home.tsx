@@ -16,7 +16,7 @@ const Home = () => {
       </p>
       <button
         className={`mt-6 px-8 py-3 ${
-          logged
+          !logged
             ? 'bg-gray-300 text-gray-500 animate-pulse'
             : 'bg-blue-600 text-white'
         } text-lg font-semibold rounded-lg shadow ${
@@ -27,7 +27,7 @@ const Home = () => {
             ? `/u/${user.database.profileOptions.displayName}`
             : '/api/auth'
         }
-        disabled={!!logged}
+        disabled={!logged}
       >
         {logged ? 'View my profile' : 'Login'}
       </button>
