@@ -3,12 +3,12 @@ import { createContext, ReactNode, useContext, useEffect, useState } from "react
 import Cookies from 'js-cookie'
 
 interface UserContext {
-    logged: boolean,
+    logged: any,
     user: any,
     setUser: any
 }
 export const AuthContext = createContext<UserContext>({
-    logged: false,
+    logged: undefined,
     user: undefined,
     setUser: undefined
 })
