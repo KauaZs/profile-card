@@ -75,7 +75,6 @@ const Card = () => {
         }, [data, error])
     }
 
-    console.log(data)
     if (!data && !error) {
       return (
         <div className='flex items-center h-screen justify-center'>

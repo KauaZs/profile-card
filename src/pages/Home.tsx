@@ -3,7 +3,7 @@ import React from "react";
 
 const Home = () => {
   const { user, logged } = useAuth()
-  console.log(logged)
+ 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800 flex flex-col items-center">
     <header className="w-full text-center py-16 px-4 bg-white shadow-lg">
