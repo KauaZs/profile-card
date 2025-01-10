@@ -3,6 +3,7 @@ import HallFameCard from '../components/HallFameCard';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PageNotFound from './Error/PageNotFound';
+import Loading from './Loading';
 
 const HallFame = () => {
   const [usersHallFame, setUsersHallFame] = useState<IUserData[] | null>(null);
@@ -26,7 +27,7 @@ const HallFame = () => {
   }, []);
 
   if (!usersHallFame) {
-    return <PageNotFound />;
+    return <Loading />;
   }
 
   return (
