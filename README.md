@@ -4,6 +4,9 @@ This is a simple profile card project using React and Tailwindcss. Below are the
 
 <img style="border-radius:14px" src="https://cloud-6y9ugxmed-hack-club-bot.vercel.app/0captura_de_tela_2025-01-09_144714.png" />
 
+## You can customize your profile the way you want!
+<img style="border-radius:14px" src="https://i.imgur.com/dSkgv2q.png" />
+
 ## How to Set Up
 
 1. Clone this repository:
