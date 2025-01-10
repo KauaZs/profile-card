@@ -41,6 +41,12 @@ const Home = () => {
       >
         {!loggedProcess ? 'Loading...' : (user ? 'View my profile' : 'Login')}
       </button>
+
+      <button className='bg-yellow-300 shadow text-white text-lg font-semibold mt-4 ml-3 px-8 py-3 rounded-lg hover:bg-yellow-500' 
+        onClick={() => window.location.pathname = '/hallfame'}
+      >
+        View HallFame
+      </button>
     </header>
 
     
