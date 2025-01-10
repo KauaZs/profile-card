@@ -22,7 +22,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     const [process, setLoggedProcess] = useState<boolean>(false)
     useEffect(() => {
         const fetchUser = async () => {
-            const user = await axios.get('/api/@me',{
+            const user = await axios.get('/api/users/@me',{
                 withCredentials: true
             })
             
