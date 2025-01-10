@@ -10,26 +10,7 @@ import PageNotFound from './Error/PageNotFound';
 import { DropdownMenuAccount } from '../components/Dropdown';
 
 import { Helmet } from 'react-helmet';
-
-
-interface IUserData {
-  _id: string
-  profileOptions: {
-    displayName: string,
-    aboutme: string,
-    banner: string,
-    avatar: string,
-    effectSpace: boolean,
-    colorCard: string,
-    colorBackground: string,
-    socials: {
-      discord: string,
-      github: string
-    }
-  }
-}
-
-
+import { IUserData } from '../types/user';
 
 const darkenHex = (hex: string, amount: number): string => {
   hex = hex.replace("#", "");
@@ -54,7 +35,7 @@ const Card = () => {
       )
     } else {
         useEffect(() => {     
-          if (data)return;
+          if (data) return;
             const fetchData = async () => {
               try { 
                 const result = await axios.get(`/api/users/${user}`, {
@@ -75,8 +56,7 @@ const Card = () => {
 
     if (!data && !error) {
       return (
-        <div className='flex items-center h-screen justify-center'>
-         
+        <div className='flex items-center min-h-screen justify-center'>         
           <div className="text-center">
               <div role="status">
                   <svg aria-hidden="true" className="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +81,7 @@ const Card = () => {
     const isHisLogged = logged && userLogged.discord.id === data?._id;
     return ( 
         
-      <div className="flex items-center justify-center h-screen relative" style={
+      <div className="flex items-center justify-center min-h-screen relative overflow-hidden" style={
         {backgroundColor: data.profileOptions?.colorBackground || '#111827'}
       }>
 
@@ -122,7 +102,7 @@ const Card = () => {
               Loading...
             </Button>
           </div>
-        )   :  isHisLogged ? (
+        )  : logged ? (
           <div className="absolute top-0 right-0 mt-4 mr-3 flex items-center">
             <DropdownMenuAccount  isHisProfile={isHisLogged}/>
           </div>
@@ -162,7 +142,7 @@ const Card = () => {
             <h1 className="font-semibold text-white right-20 text-3xl">{data?.profileOptions.displayName || ''}</h1>
             <p className="font-Cinzel text-white right-20 mt-1 text-center text-xs">{data.profileOptions?.aboutme || ""}</p>   
           </div>
-          <div className={`flex flex-grow gap-6 mt-6 ${(!data.profileOptions.socials.discord || !data.profileOptions.socials.github) ? 'justify-center' : 'justify-between'}`}>
+          <div className={`flex gap-6 mt-4 ${(!data.profileOptions.socials.discord || !data.profileOptions.socials.github) ? 'justify-center' : 'justify-between'}`}>
             <Social 
               hexColor={darkenHex(data.profileOptions.colorCard, 30)} 
               discordLink={data.profileOptions.socials.discord || null}
