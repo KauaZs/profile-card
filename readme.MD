@@ -1,4 +1,4 @@
-# Profile Card React
+# Profile Card React V1
 
 This is a simple profile card project using React. Below are the instructions on how to set up and run the project.
 
