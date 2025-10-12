@@ -1,4 +1,4 @@
-export default {
+const config = {
     profileOptions: {
         displayName: "KauaZs",
         avatar_url: "https://i.imgur.com/UiYbFjI.png",
@@ -9,4 +9,6 @@ export default {
         discord: "https://discord.com/users/573812452165156864",
         github: "https://github.com/KauaZs"
     }
-}
+};
+
+export default config;
