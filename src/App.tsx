@@ -19,7 +19,6 @@ function App() {
           />
         </div>
 
-        {/* Avatar */}
         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
           <img
             src={avatar_url}
